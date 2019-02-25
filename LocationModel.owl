@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:LocationModel="http://www.surrey.ac.uk/ccsr/ontologies/LocationModel.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+  xml:base="http://www.surrey.ac.uk/ccsr/ontologies/LocationModel.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="SpatialThing"/>
+  <owl:Class rdf:ID="Lab">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Room"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Compass_Area">
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <LocationModel:Compass_Area rdf:ID="East"/>
+          <LocationModel:Compass_Area rdf:ID="NorthEast"/>
+          <LocationModel:Compass_Area rdf:ID="North"/>
+          <LocationModel:Compass_Area rdf:ID="NorthWest"/>
+          <LocationModel:Compass_Area rdf:ID="South"/>
+          <LocationModel:Compass_Area rdf:ID="SouthEast"/>
+          <LocationModel:Compass_Area rdf:ID="SouthWest"/>
+          <LocationModel:Compass_Area rdf:ID="West"/>
+        </owl:oneOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#SpatialThing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MeetingRoom">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Room"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Premises">
+    <rdfs:subClassOf rdf:resource="#SpatialThing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Floor">
+    <rdfs:subClassOf rdf:resource="#SpatialThing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Room">
+    <rdfs:subClassOf rdf:resource="#SpatialThing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Building">
+    <rdfs:subClassOf rdf:resource="#SpatialThing"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="isContainedIn">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="contains"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Floor"/>
+    <rdfs:domain rdf:resource="#Room"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#contains">
+    <owl:inverseOf rdf:resource="#isContainedIn"/>
+    <rdfs:domain rdf:resource="#Floor"/>
+    <rdfs:range rdf:resource="#Room"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFacingArea">
+    <rdfs:range rdf:resource="#Compass_Area"/>
+    <rdfs:domain rdf:resource="#Room"/>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:ID="isLocatedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Building"/>
+    <rdfs:range rdf:resource="#Premises"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isInBuilding">
+    <rdfs:domain rdf:resource="#Floor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="hasFloor"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Building"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#hasFloor">
+    <owl:inverseOf rdf:resource="#isInBuilding"/>
+    <rdfs:domain rdf:resource="#Building"/>
+    <rdfs:range rdf:resource="#Floor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <LocationModel:Building rdf:ID="BB_Building">
+    <LocationModel:isLocatedIn>
+      <LocationModel:Premises rdf:ID="UniversityofSurreyCampus">
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://dbpedia.org/page/University_of_Surrey</rdfs:seeAlso>
+      </LocationModel:Premises>
+    </LocationModel:isLocatedIn>
+  </LocationModel:Building>
+  <LocationModel:Floor rdf:ID="BA_SecondFloor">
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E11">
+        <LocationModel:hasFacingArea rdf:resource="#NorthWest"/>
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:MeetingRoom rdf:ID="E24">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+        <LocationModel:hasFacingArea rdf:resource="#West"/>
+      </LocationModel:MeetingRoom>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:MeetingRoom rdf:ID="E6">
+        <LocationModel:hasFacingArea rdf:resource="#West"/>
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:MeetingRoom>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E22">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E4">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E17">
+        <LocationModel:hasFacingArea rdf:resource="#South"/>
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E7">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E15">
+        <LocationModel:hasFacingArea rdf:resource="#South"/>
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:MeetingRoom rdf:ID="E1">
+        <LocationModel:hasFacingArea rdf:resource="#East"/>
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:MeetingRoom>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E18">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E12">
+        <LocationModel:hasFacingArea rdf:resource="#South"/>
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E10">
+        <LocationModel:hasFacingArea rdf:resource="#East"/>
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E8">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:isInBuilding>
+      <LocationModel:Building rdf:ID="BA_Building">
+        <LocationModel:hasFloor rdf:resource="#BA_SecondFloor"/>
+        <LocationModel:hasFloor>
+          <LocationModel:Floor rdf:ID="BA_FirstFloor">
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U35">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U46">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U50">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Lab rdf:ID="U53">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Lab>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U40">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Lab rdf:ID="U54">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Lab>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U41">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U36">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:isInBuilding rdf:resource="#BA_Building"/>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U42">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U7">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U37">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U48">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U43">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U38">
+                <LocationModel:hasFacingArea rdf:resource="#NorthEast"/>
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U8">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U49">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U32">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U39">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U5">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U4">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U33">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U44">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U34">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U6">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+            <LocationModel:contains>
+              <LocationModel:Room rdf:ID="U45">
+                <LocationModel:isContainedIn rdf:resource="#BA_FirstFloor"/>
+              </LocationModel:Room>
+            </LocationModel:contains>
+          </LocationModel:Floor>
+        </LocationModel:hasFloor>
+        <LocationModel:isLocatedIn rdf:resource="#UniversityofSurreyCampus"/>
+      </LocationModel:Building>
+    </LocationModel:isInBuilding>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E20">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E23">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E9">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E13">
+        <LocationModel:hasFacingArea rdf:resource="#South"/>
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E21">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E16">
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+        <LocationModel:hasFacingArea rdf:resource="#South"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="E14">
+        <LocationModel:hasFacingArea rdf:resource="#South"/>
+        <LocationModel:isContainedIn rdf:resource="#BA_SecondFloor"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+  </LocationModel:Floor>
+  <LocationModel:Floor rdf:ID="BC_SecondFloor">
+    <LocationModel:isInBuilding>
+      <LocationModel:Building rdf:ID="BC_Building">
+        <LocationModel:isLocatedIn rdf:resource="#UniversityofSurreyCampus"/>
+        <LocationModel:hasFloor rdf:resource="#BC_SecondFloor"/>
+      </LocationModel:Building>
+    </LocationModel:isInBuilding>
+    <LocationModel:contains>
+      <LocationModel:Room rdf:ID="BC_19_02">
+        <LocationModel:isContainedIn rdf:resource="#BC_SecondFloor"/>
+        <LocationModel:hasFacingArea rdf:resource="#East"/>
+      </LocationModel:Room>
+    </LocationModel:contains>
+  </LocationModel:Floor>
+  <LocationModel:Floor rdf:ID="BB_FourthFloor">
+    <LocationModel:contains>
+      <LocationModel:MeetingRoom rdf:ID="BB_19_04">
+        <LocationModel:isContainedIn rdf:resource="#BB_FourthFloor"/>
+        <LocationModel:hasFacingArea rdf:resource="#SouthEast"/>
+      </LocationModel:MeetingRoom>
+    </LocationModel:contains>
+  </LocationModel:Floor>
+  <LocationModel:MeetingRoom rdf:ID="BB_39_02">
+    <LocationModel:isContainedIn>
+      <LocationModel:Floor rdf:ID="BB_SecondFloor">
+        <LocationModel:contains rdf:resource="#BB_39_02"/>
+      </LocationModel:Floor>
+    </LocationModel:isContainedIn>
+    <LocationModel:hasFacingArea rdf:resource="#SouthEast"/>
+  </LocationModel:MeetingRoom>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.8, Build 629)  http://protege.stanford.edu -->
