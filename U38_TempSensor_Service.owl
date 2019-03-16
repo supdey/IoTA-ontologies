@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ssn "http://purl.oclc.org/NET/ssnx/ssn#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY quantity "http://purl.oclc.org/NET/ssnx/qu/quantity#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY EntityIns "http://www.owl-ontologies.com/EntityIns.owl#" >
+    <!ENTITY Service "http://www.daml.org/services/owl-s/1.2/Service.owl#" >
+    <!ENTITY Profile "http://www.daml.org/services/owl-s/1.2/Profile.owl#" >
+    <!ENTITY ResourceModel "http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#" >
+    <!ENTITY Grounding "http://www.daml.org/services/owl-s/1.2/Grounding.owl#" >
+    <!ENTITY ServiceModel "http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#" >
+    <!ENTITY U38_temp_sensor_service "http://www.surrey.ac.uk/ccsr/ontologies/U38_temp_sensor_service.owl#" >
+    <!ENTITY U38_Temp_Sensor_Resource "http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.surrey.ac.uk/ccsr/ontologies/U38_temp_sensor_service.owl#"
+     xml:base="http://www.surrey.ac.uk/ccsr/ontologies/U38_temp_sensor_service.owl"
+     xmlns:Service="http://www.daml.org/services/owl-s/1.2/Service.owl#"
+     xmlns:ServiceModel="http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#"
+     xmlns:ResourceModel="http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#"
+     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+     xmlns:Profile="http://www.daml.org/services/owl-s/1.2/Profile.owl#"
+     xmlns:U38_temp_sensor_service="http://www.surrey.ac.uk/ccsr/ontologies/U38_temp_sensor_service.owl#"
+     xmlns:U38_Temp_Sensor_Resource="http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Grounding="http://www.daml.org/services/owl-s/1.2/Grounding.owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:EntityIns="http://www.owl-ontologies.com/EntityIns.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:quantity="http://purl.oclc.org/NET/ssnx/qu/quantity#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+        <owl:imports rdf:resource="http://www.owl-ontologies.com/EntityIns.owl"/>
+        <owl:imports rdf:resource="http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl"/>
+        <owl:imports rdf:resource="http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="&ssn;hasOutput"/>
+    
+
+
+    <!-- http://www.daml.org/services/owl-s/1.2/Service.owl#presents -->
+
+    <owl:ObjectProperty rdf:about="&Service;presents"/>
+    
+
+
+    <!-- http://www.daml.org/services/owl-s/1.2/Service.owl#supports -->
+
+    <owl:ObjectProperty rdf:about="&Service;supports"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#exposes -->
+
+    <owl:ObjectProperty rdf:about="&ServiceModel;exposes"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#hasObservationArea -->
+
+    <owl:ObjectProperty rdf:about="&ServiceModel;hasObservationArea"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#hasObservationSchedule -->
+
+    <owl:ObjectProperty rdf:about="&ServiceModel;hasObservationSchedule"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#hasOutputType -->
+
+    <owl:ObjectProperty rdf:about="&ServiceModel;hasOutputType"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#hasServiceType -->
+
+    <owl:ObjectProperty rdf:about="&ServiceModel;hasServiceType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.daml.org/services/owl-s/1.2/Grounding.owl#AtomicProcessGrounding -->
+
+    <owl:Class rdf:about="&Grounding;AtomicProcessGrounding"/>
+    
+
+
+    <!-- http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile -->
+
+    <owl:Class rdf:about="&Profile;Profile"/>
+    
+
+
+    <!-- http://www.daml.org/services/owl-s/1.2/Service.owl#Service -->
+
+    <owl:Class rdf:about="&Service;Service"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#ObservationArea -->
+
+    <owl:Class rdf:about="&ServiceModel;ObservationArea"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#ObservationSchedule -->
+
+    <owl:Class rdf:about="&ServiceModel;ObservationSchedule"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/quantity#temperature -->
+
+    <owl:Thing rdf:about="&quantity;temperature"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/EntityIns.owl#AmbientTempAttribute -->
+
+    <owl:Thing rdf:about="&EntityIns;AmbientTempAttribute"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/ServiceModel.owl#OWL-S -->
+
+    <owl:Thing rdf:about="&ServiceModel;OWL-S"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#U38_Temp_Sensor_Resource -->
+
+    <owl:Thing rdf:about="&U38_Temp_Sensor_Resource;U38_Temp_Sensor_Resource"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/U38_temp_sensor_service.owl#U38_ObservationArea -->
+
+    <ServiceModel:ObservationArea rdf:about="#U38_ObservationArea">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </ServiceModel:ObservationArea>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/U38_temp_sensor_service.owl#U38_ObservationSchedule -->
+
+    <ServiceModel:ObservationSchedule rdf:about="#U38_ObservationSchedule">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </ServiceModel:ObservationSchedule>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/U38_temp_sensor_service.owl#U38_TempSensorServiceProcessGrounding -->
+
+    <owl:Thing rdf:about="#U38_TempSensorServiceProcessGrounding">
+        <rdf:type rdf:resource="&Grounding;AtomicProcessGrounding"/>
+        <ServiceModel:hasOutputType rdf:resource="&quantity;temperature"/>
+        <ServiceModel:exposes rdf:resource="&U38_Temp_Sensor_Resource;U38_Temp_Sensor_Resource"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/U38_temp_sensor_service.owl#U38_TempSensorService_Profile -->
+
+    <owl:Thing rdf:about="#U38_TempSensorService_Profile">
+        <rdf:type rdf:resource="&Profile;Profile"/>
+        <ssn:hasOutput rdf:resource="&EntityIns;AmbientTempAttribute"/>
+        <ServiceModel:hasObservationArea rdf:resource="#U38_ObservationArea"/>
+        <ServiceModel:hasObservationSchedule rdf:resource="#U38_ObservationSchedule"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/U38_temp_sensor_service.owl#U38_Temp_Sensor_Service -->
+
+    <Service:Service rdf:about="#U38_Temp_Sensor_Service">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ServiceModel:hasServiceType rdf:resource="&ServiceModel;OWL-S"/>
+        <Service:supports rdf:resource="#U38_TempSensorServiceProcessGrounding"/>
+        <Service:presents rdf:resource="#U38_TempSensorService_Profile"/>
+    </Service:Service>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

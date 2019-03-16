@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://www.owl-ontologies.com/EntityIns.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:em="http://www.surrey.ac.uk/ccsr/IoT-A/EntityModel.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.owl-ontologies.com/EntityIns.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.surrey.ac.uk/ccsr/IoT-A/EntityModel.owl"/>
+  </owl:Ontology>
+  <em:Entity rdf:ID="RoomU38">
+    <em:hasLocalIdentifier rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.owl-ontologies.com/LocationModel.owl#U38</em:hasLocalIdentifier>
+    <em:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >U38</em:hasName>
+    <em:hasA>
+      <em:DomainAttribute rdf:ID="AmbientTempAttribute">
+        <em:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >ambient temperature</em:hasAttributeName>
+        <em:hasValueContainer>
+          <em:ValueContainer rdf:ID="AmbientTempValue">
+            <em:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >17</em:value>
+            <em:hasMetadata>
+              <em:ValueMetadata rdf:ID="UoM">
+                <em:metadataType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://purl.oclc.org/NET/ssnx/qu/dim#TemperatureUnit</em:metadataType>
+                <em:metadataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.qudt.org/qudt/owl/1.0.0/unit/Instances.html#DegreeCelsius</em:metadataValue>
+              </em:ValueMetadata>
+            </em:hasMetadata>
+          </em:ValueContainer>
+        </em:hasValueContainer>
+        <em:hasAttributeType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://purl.oclc.org/NET/ssnx/qu/dim#Temperature</em:hasAttributeType>
+        <em:hasAttributeValue rdf:resource="#AmbientTempValue"/>
+      </em:DomainAttribute>
+    </em:hasA>
+    <em:hasA>
+      <em:Location rdf:ID="BABuildingLocation">
+        <em:hasLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >51.23536</em:hasLatitude>
+        <em:hasLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >-0.5738</em:hasLongitude>
+        <em:hasAltitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+        >45</em:hasAltitude>
+        <em:hasLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.owl-ontologies.com/LocationModel.owl#Guildford</em:hasLocation>
+        <em:hasLocalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.owl-ontologies.com/LocationModel.owl#BABuilding</em:hasLocalLocation>
+        <em:hasLongtitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >-0.57427</em:hasLongtitude>
+        <em:hasLocationURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.geonames.org/2647793/</em:hasLocationURI>
+        <em:hasGlobalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.geonames.org/2647793/</em:hasGlobalLocation>
+      </em:Location>
+    </em:hasA>
+    <em:isMobile rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</em:isMobile>
+    <em:hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.owl-ontologies.com/LocationModel.owl#Room</em:hasType>
+    <em:hasGlobalIdentifier rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://dbpedia.org/resource/University_of_Surrey</em:hasGlobalIdentifier>
+  </em:Entity>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->

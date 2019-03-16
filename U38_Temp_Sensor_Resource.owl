@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ResourceModel "http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#" >
+    <!ENTITY U38_Temp_Sensor_Resource "http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#"
+     xml:base="http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:ResourceModel="http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:U38_Temp_Sensor_Resource="http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://www.surrey.ac.uk/ccsr/ontologies/ResourceModel.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasDescription -->
+
+    <owl:ObjectProperty rdf:about="&ResourceModel;hasDescription"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasResourceLocation -->
+
+    <owl:ObjectProperty rdf:about="&ResourceModel;hasResourceLocation"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasType -->
+
+    <owl:ObjectProperty rdf:about="&ResourceModel;hasType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasAltitude -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasAltitude"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasGlobalLocation -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasGlobalLocation"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasLatitude -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasLatitude"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasLocalLocation -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasLocalLocation"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasLongtitude -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasLongtitude"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasName"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasResourceDescriptionID -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasResourceDescriptionID"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasResourceID -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasResourceID"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasTag -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasTag"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasTimeZone -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasTimeZone"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#hasURITag -->
+
+    <owl:DatatypeProperty rdf:about="&ResourceModel;hasURITag"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#Location -->
+
+    <owl:Class rdf:about="&ResourceModel;Location"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#Resource -->
+
+    <owl:Class rdf:about="&ResourceModel;Resource"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#ResourceDescription -->
+
+    <owl:Class rdf:about="&ResourceModel;ResourceDescription"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/IoT-A/ResourceModel.owl#Sensor -->
+
+    <owl:Thing rdf:about="&ResourceModel;Sensor"/>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#BaBuildingLocation -->
+
+    <owl:Thing rdf:about="#BaBuildingLocation">
+        <rdf:type rdf:resource="&ResourceModel;Location"/>
+        <ResourceModel:hasLongtitude rdf:datatype="&xsd;float">-0.589444</ResourceModel:hasLongtitude>
+        <ResourceModel:hasAltitude rdf:datatype="&xsd;decimal">45</ResourceModel:hasAltitude>
+        <ResourceModel:hasLatitude rdf:datatype="&xsd;float">51.235336</ResourceModel:hasLatitude>
+        <ResourceModel:hasLocalLocation rdf:datatype="&xsd;anyURI"
+            >http://surrey.ac.uk/ontologies/LocationModel.owl#BABuilding</ResourceModel:hasLocalLocation>
+        <ResourceModel:hasGlobalLocation rdf:datatype="&xsd;anyURI"
+            >http://sws.geonames.org/2647793</ResourceModel:hasGlobalLocation>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#ResourceDescription_U38_temp_sensor -->
+
+    <owl:Thing rdf:about="#ResourceDescription_U38_temp_sensor">
+        <rdf:type rdf:resource="&ResourceModel;ResourceDescription"/>
+        <ResourceModel:hasResourceDescriptionID rdf:datatype="&xsd;anyURI"
+            >desc_U38_temp_sensor</ResourceModel:hasResourceDescriptionID>
+        <ResourceModel:hasURITag rdf:datatype="&xsd;anyURI"
+            >http://dbpedia.org/ontology/Device</ResourceModel:hasURITag>
+        <ResourceModel:hasTag rdf:datatype="&xsd;string"
+            >temperature sensor in room 38 in BA building</ResourceModel:hasTag>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#U38_Temp_Sensor_Resource -->
+
+    <owl:Thing rdf:about="#U38_Temp_Sensor_Resource">
+        <rdf:type rdf:resource="&ResourceModel;Resource"/>
+        <ResourceModel:hasResourceID rdf:datatype="&xsd;anyURI"
+            >http://www.surrey.ac.uk/ccsr/ontologies/U38_Temp_Sensor_Resource.owl#U38_Temp_Sensor_Resource</ResourceModel:hasResourceID>
+        <ResourceModel:hasTimeZone rdf:datatype="&xsd;anyURI"
+            >http://www.w3.org/2006/timezone-world#ZTZ</ResourceModel:hasTimeZone>
+        <ResourceModel:hasName rdf:datatype="&xsd;string"
+            >tempsensor_roomU38</ResourceModel:hasName>
+        <ResourceModel:hasType rdf:resource="&ResourceModel;Sensor"/>
+        <ResourceModel:hasResourceLocation rdf:resource="#BaBuildingLocation"/>
+        <ResourceModel:hasDescription rdf:resource="#ResourceDescription_U38_temp_sensor"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
